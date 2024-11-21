@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import defaultStyles from "@/styles/defautltStyles";
 
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
+    <View style={defaultStyles.container}>
+      <Text style={defaultStyles.textWhite}>Profile</Text>
     </View>
   );
 };
