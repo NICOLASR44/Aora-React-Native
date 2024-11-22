@@ -3,12 +3,14 @@ import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 
+SplashScreen.preventAutoHideAsync(); //Empécher l'ecran de démarage de fonctionner automatiquement avant la fin du chargement
+
 const RootLayout = () => {
   const [fontLoaded, error] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
     "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
-    "Poppins-Poppins-ExtraLight": require("../assets/fonts/Poppins-Poppins-ExtraLight.ttf"),
+    "Poppins-Poppins-ExtraLight": require("../assets/fonts/Poppins-ExtraLight.ttf"),
     "Poppins-Poppins-Light": require("../assets/fonts/Poppins-Light.ttf"),
     "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
@@ -21,8 +23,10 @@ const RootLayout = () => {
   useEffect(() => {
     if (error) throw error;
 
-    if (fontLoaded) SplashScreen;
+    if (fontLoaded) SplashScreen.hideAsync(); //Masquage de l'écran de démarage
   }, [fontLoaded, error]);
+
+  if (!fontLoaded && !error) return null;
 
   return (
     <Stack>

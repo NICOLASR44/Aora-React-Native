@@ -5,11 +5,11 @@ import "../global.css";
 
 export default function Index() {
   return (
-    <View className="flex-1 items-center justify-center bg-black">
-      <Text className="text-3xl text-blue-400">Aora!</Text>
+    <View className="flex-1 items-center justify-center bg-white">
+      <Text className="text-3xl font-thin">Aora!</Text>
       <StatusBar style="auto" />
-      <Link href="/profiles" className="text-2xl text-white">
-        Go to Profile
+      <Link href="/home" className="text-2xl font-medium">
+        Go to Home
       </Link>
     </View>
   );
