@@ -4,8 +4,8 @@ import defaultStyles from "@/styles/defautltStyles";
 
 const Profile = () => {
   return (
-    <View style={defaultStyles.container}>
-      <Text style={defaultStyles.textWhite}>Profile</Text>
+    <View className="flex-1 items-center justify-center bg-black">
+      <Text className="text-2xl text-white">Profile</Text>
     </View>
   );
 };
